@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    function A(age,name){
+        this.age = age;
+        this.name = name ;
+        
+    }
+    A.prototype.show  = function () {
+        console.log(this.name);
+        console.log(this);
+    }
+    function B(age,name,job){
+        A.call(this,arguments)
+        this.job = job;
+    }
+    B.prototype = new A()
+    var a = new B();
+    var b = new A();
+    console.log(a.show());
+
+</script>
+</html>
