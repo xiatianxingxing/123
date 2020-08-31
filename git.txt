@@ -1,0 +1,73 @@
+ydong
+git 用法
+git init 初始化
+git add . 
+git commit -m "说明"
+
+git branch  显示所有分支
+切换分支
+$ git checkout  分支名
+git fetch
+git merge
+git reset --hard origin/master  改变请求头
+// 修改特殊情况 出现无法点击（不知道怎样形容）
+i
+ESC
+：wq  、、、  ZZ 也可以   （保存并退出的意思）
+
+
+git强制覆盖：
+git fetch --all
+// 可以强制恢复之前的一个版本 让后再强制push上去
+git reset --hard origin/master
+?
+git pull
+强制覆盖本地命令（单条执行）：
+git fetch --all && git reset --hard origin/master && git pull
+
+
+//  注意看提示
+git status  // 查看状态
+git stash   // 隐藏修改过的文件
+git stash pop  // 把隐藏的文件放出来
+git fetch origin 名字 //  把远程的更新下来
+
+git merge  origin/名字 -m “合并代码”   // 合并代码
+有冲突 请改冲突
+改完冲突后
+git add 
+git commit -m
+git fatch
+git push
+
+//  撤销commit
+git add . //添加所有文件
+
+git commit -m "本功能全部完成"
+ 撤销开始 
+git reset --soft HEAD^     // 撤销最近一次
+git reset --soft HEAD~1   // 撤销一次
+git reset --soft HEAD~2   // 撤销两次
+
+// 撤销 add ./ 并且撤销 commit
+ git  reset --mixed HEAD^ 和--soft一样
+
+// git commit --amend  // 修改commit 的注释
+
+
+-------强行提交  以本地覆盖终端
+$ git push -u origin master -f  
+  如果报错
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+可以用 git remote add origin‘url’来解决
+让后再 git push -u origin master -f 
+ 
+
+撤销 add
+git reset HEAD 名字  如果不写撤销全部
+
+样式模板 
+配色方案
